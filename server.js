@@ -1,10 +1,8 @@
-const express = require('express');
-const app = express();
+const app = require('./lib/app.js');
 const port = process.env.PORT || 3000;
+require('./lib/client').connect();
 
-app.get('/', (req, res) => {
-  res.send('Hello World!!!!!');
-});
+console.log(port);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
